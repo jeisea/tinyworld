@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+ <table id="user-list">
+    <thead>
+    <tr>
+        <td>UID</td>
+        <td>First</td>
+        <td>Last</td>
+        <td>Age</td>
+        <td>Password</td>
+    </tr>
+    </thead>
+    <% for (var i = 0; i < rows.length; i++) { %>
+      <tr>
+        <td><%= rows[i].uid      %></td>
+        <td><%= rows[i].fname    %></td>
+        <td><%= rows[i].lname    %></td>
+        <td><%= rows[i].age      %></td>
+        <td><%= rows[i].password %></td>
+      </tr>
+    <% } %>
+  </table>
+	
+
+
+  </body>
+</html
