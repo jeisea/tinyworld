@@ -1,22 +1,28 @@
 drop table if exists users cascade;
-drop table if exists posts cascade;
-drop table if exists relations cascade;
+-- drop table if exists posts cascade;
+-- drop table if exists relations cascade;
 
 create table users (
     uid SERIAL,
-    username varchar(50),
+    uname varchar(50),
+    fname varchar(50),
+    lname varchar(50),
+    age integer,
     password varchar(25),
-    online varchar(10),
+    picture bytea,
+    posts text[],
     primary key (uid)
 );
-
+/*
 create table posts (
 	pid SERIAL,
 	username varchar(50),
 	post varchar(300),
 	primary key (pid)
 );
+*/
 
+/*
 create table relations (
 	uid int,
 	pid int,
@@ -24,6 +30,9 @@ create table relations (
 	foreign key (pid) references posts,
 	unique(uid,pid)
 );
+*/
+insert into users (uname, fname, lname, age, password, picture, posts) values 
+('JDoe11', 'John', 'Doe', 18, 'hellooxxxxx', 'picture', '{"hi", "yeah", "bla"}');
 
 /*
 insert into users (fname, lname, password, age) values ('John', 'Doe', 'xxxx', 27);
