@@ -1,22 +1,19 @@
 
-<<<<<<< HEAD
 var users = require('../routes/user');
-=======
->>>>>>> database-edit
+
 
 //This one was here by default. Not necessary
 exports.index = function(req, res){
-<<<<<<< HEAD
+
   res.render('index', { title: 'Welcome to Tiny World' });
 };
 
-<<<<<<< HEAD
+
 exports.getProfiles = function (req, res) {
     res.render('profiles', {title: 'TinyWorld'});
 };
-=======
-  res.render('index', { title: 'tinyWorld' });
-};
+
+
 
 exports.home = function(req,res){
 	res.render('home', {title: 'Home'});
@@ -28,17 +25,18 @@ exports.toprankings = function(req, res){
 
 exports.profile = function(req, res){
 	var uname = 'huygaa11';
-	users.getuser(uname, function(err, rows){
-		if(err
-			???
+	users.getuser(uname, function(err, user){
+		if(err)
+			console.log('error');
 		else
 			res.render('profile', {
-				title   : 'Profile',
-				fname   : rows.fname,
-				lname   : rows.lname,
-				gender  : rows.gender,
-				age	    : rows.age,
-				picture : rows.picture
+				user : user
+				/*title   : 'Profile',
+				fname   : user.fname,
+				lname   : user.lname,
+				gender  : user.gender,
+				age	    : user.age,
+				picture : user.*/
 			});
 	});
 };
@@ -121,6 +119,3 @@ exports.register = function(req, res){
   	}
 };
 
->>>>>>> d66248a289f9bda7ac910c135e17ac9f695f62f4
-=======
->>>>>>> database-edit
