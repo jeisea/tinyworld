@@ -72,3 +72,24 @@ pg.connect(conn, function(err, client, done){ // connecting to the db
 	});
 });	
 };
+
+exports.getuser=function(username, callback){
+pg.connect(conn, function(err, client, done){ // connecting to the db
+	if(err){ // if cannot connect to the db throw error, bad practice!! send callback!
+		console.log("error in connection to database");
+		throw err;
+	}	
+		
+	var qry ='select * from users where uname=$1'; // used for not making the client.query too big. 
+	client.query(qry, [username], function (err, result) { //selecting from the db
+		done(); // connection done. 
+		if(err){ // if cannot select, throw error. bad practice. send callback to user!!!
+			console.log("call to database did not work correctly");
+			callback(err);
+		}
+		// do something with the result
+		else callback(undefined, result.rows); 
+	});
+});
+
+};

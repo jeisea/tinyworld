@@ -9,6 +9,8 @@ create table users (
     lname varchar(50),
     age integer,
     password varchar(25),
+    gender varchar(10), 
+    hobbies text[],
     picture bytea,
     posts text[],
     primary key (uid)
@@ -31,8 +33,8 @@ create table relations (
 	unique(uid,pid)
 );
 */
-insert into users (uname, fname, lname, age, password, picture, posts) values 
-('JDoe11', 'John', 'Doe', 18, 'hellooxxxxx', 'picture', '{"hi", "yeah", "bla"}');
+insert into users (uname, fname, lname, age, password, gender, picture, posts, hobbies) values 
+('huygaa11', 'John', 'Doe', 18, 'hellooxxxxx', 'Male', 'picture', '{"hi", "yeah", "bla"}', '{"ride bike", "swimming", "See Denniss girlfriend"}');
 
 /*
 insert into users (fname, lname, password, age) values ('John', 'Doe', 'xxxx', 27);
