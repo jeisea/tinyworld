@@ -73,7 +73,7 @@ pg.connect(conn, function(err, client, done){ // connecting to the db
 });	
 };
 
-exports.getuser=function(username, callback){
+exports.getuser=function(username, cb){
 pg.connect(conn, function(err, client, done){ // connecting to the db
 	if(err){ // if cannot connect to the db throw error, bad practice!! send callback!
 		console.log("error in connection to database");
@@ -85,11 +85,11 @@ pg.connect(conn, function(err, client, done){ // connecting to the db
 		done(); // connection done. 
 		if(err){ // if cannot select, throw error. bad practice. send callback to user!!!
 			console.log("call to database did not work correctly");
-			callback(err);
+			cb(err);
 		}
-		// do something with the result
-		else callback(undefined, result.rows); 
+		else {
+			cb(undefined, result.rows[0]);
+		}
 	});
-});
-
+});	
 };
