@@ -7,12 +7,22 @@ create table users (
     uname varchar(50),
     fname varchar(50),
     lname varchar(50),
-    age integer,
+    age int,
     password varchar(25),
+    gender varchar(10), 
+    hobbies text[],
+    popularity int,    
     picture bytea,
-    posts text[],
     primary key (uid)
 );
+/*
+create table challenges(
+    cid SERIAL,
+    cname varchar(50),
+    
+);
+*/
+
 /*
 create table posts (
 	pid SERIAL,
@@ -31,9 +41,14 @@ create table relations (
 	unique(uid,pid)
 );
 */
-insert into users (uname, fname, lname, age, password, picture, posts) values 
-('JDoe11', 'John', 'Doe', 18, 'hellooxxxxx', 'picture', '{"hi", "yeah", "bla"}');
+insert into users (uname, fname, lname, age, password, gender, picture, hobbies, popularity) values 
+('huygaa11', 'John', 'Doe', 18, 'hellooxxxxx', 'Male', 'picture',  '{"ride bike", "swimming", "See Denniss girlfriend"}', 5);
 
+insert into users (uname, fname, lname, age, password, gender, picture, hobbies, popularity) values 
+('tom123', 'Tommy', 'Jerry', 18, 'hellooxxxxx', 'Male', 'picture', '{"ride bike", "swimming"}', 6);
+
+insert into users (uname, fname, lname, age, password, gender, picture, hobbies, popularity) values 
+('hihi213', 'Wilson', 'David', 22, 'hellooxxxxx', 'Male', 'picture', '{"ride bike", "swimming"}', 22);
 /*
 insert into users (fname, lname, password, age) values ('John', 'Doe', 'xxxx', 27);
 insert into users (fname, lname, password, age) values ('Jane', 'Doe', 'yyyy', 28);
