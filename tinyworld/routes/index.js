@@ -1,7 +1,6 @@
 
 var users = require('../lib/users');
 
-
 //This one was here by default. Not necessary
 exports.index = function(req, res){
   res.render('index', { title: 'Welcome to Tiny World' });
