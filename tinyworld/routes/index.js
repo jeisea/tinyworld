@@ -20,6 +20,17 @@ exports.home = function(req,res){
 };
 
 exports.toprankings = function(req, res){
+	users.getAll(function(err, allusers) {
+		//Check for the top people here? or in the ejs... hmmm
+		if(err)
+			console.log('error');
+		else{
+			res.render('toprankings', {
+				allusers : allusers.
+			});
+
+		}
+	})
 	res.render('toprankings', {title: 'Top Rankings'});
 };
 
@@ -36,7 +47,9 @@ exports.profile = function(req, res){
 				lname   : user.lname,
 				gender  : user.gender,
 				age	    : user.age,
-				picture : user.*/
+				picture : user.
+				array of hobbies
+				*/
 			});
 	});
 };

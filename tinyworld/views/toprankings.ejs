@@ -64,20 +64,16 @@ body {
             <td><strong>Name</strong></td>
             <td><strong>Category</strong></td>
             <td><strong>Popularity</strong></td>
-          </tr><tr>
-            <td>User1 Name</td>
-            <td>User1 Hobby</td>
-            <td>User1 Popularity</td>
-          </tr><tr>
-            <td>User2 Name</td>
-            <td>User2 Hobby</td>
-            <td>User2 Popularity</td>
-          </tr><tr>
-            <td>User3 Name</td>
-            <td>User3 Hobby</td>
-            <td>User3 Popularity</td>
           </tr>
- 
+
+          <% for(var i = 0; i < allusers.length; i ++){ %>
+          <tr>
+            <td> <%= allusers[i].fname + ' ' + allusers[i].lname %> </td>
+            <td> <%= allusers[i].getBestHobby() %> </td>
+            <td> <%= allusers[i].popularity %> </td>
+          </tr>
+          <% } %>
+
         </table>
 
       </div>
